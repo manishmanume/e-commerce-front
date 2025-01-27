@@ -26,7 +26,7 @@ const MenCategory = () => {
           <li className="breadcrumb-item active" aria-current="page">Men</li>
         </ol>
       </nav>
-      <section className="banner_image container-fluid">
+      <section className="banner_image container-fluid ms-5">
         <img src="https://i.pinimg.com/1200x/d6/d9/65/d6d965b8678cc65a96021c61ac824e3a.jpg" alt="Online Shop Business LinkedIn Banner" />
       </section>
       <section>
