@@ -1,0 +1,38 @@
+.container {
+    font-family: 'Arial', sans-serif;
+  }
+  h1 {
+    font-weight: bold;
+    color: #333;
+  }
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .card img{
+    transition: 0.3s ease-in-out;
+  }
+
+  .card img:hover{
+    transform: scale(1.1);
+  }
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-title {
+    font-size: 1.2rem;
+    color: #007bff;
+  }
+  .card-footer {
+    border-top: none;
+  }
+  .btn-primary {
+    border: none;
+    transition: transform 0.2s;
+  }
+  .btn-primary:hover {
+    transform: scale(1.05);
+  }
+  
