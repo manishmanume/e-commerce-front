@@ -28,7 +28,7 @@ const WomenCategory = () => {
         </ol>
       </nav>
       <section className="banner_image container-fluid">
-        <img src="https://i.pinimg.com/1200x/1d/26/4c/1d264c988391a6b743cfbd299b381170.jpg" alt="Online Shop Business LinkedIn Banner" />
+        <img style={{ height: '500px', width: '100%' }} src="https://i.pinimg.com/1200x/1d/26/4c/1d264c988391a6b743cfbd299b381170.jpg" alt="Online Shop Business LinkedIn Banner" />
       </section>
       <section>
         <div className="container mt-5">

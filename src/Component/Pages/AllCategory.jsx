@@ -11,7 +11,7 @@ const AllCategory = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get(`${Base_Url_API}/get-allproduct`)
+        axios.get(`/api/get-allproduct`)
             .then(response => {
                 setProducts(response.data);
             })

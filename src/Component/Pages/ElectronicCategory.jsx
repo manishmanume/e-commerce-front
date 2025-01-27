@@ -31,7 +31,7 @@ const ElectronicCategory = () => {
         </ol>
       </nav>
       <section className="banner_image container-fluid">
-        <img src={elect_banner} style={{ height: '400px' }} alt="Online Shop Business LinkedIn Banner" />
+        <img src={elect_banner} style={{ height: '400px', width: '100%' }} alt="Online Shop Business LinkedIn Banner" />
       </section>
       <section>
         <div className="container mt-5">

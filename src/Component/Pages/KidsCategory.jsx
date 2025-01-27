@@ -30,7 +30,7 @@ const KidsCategory = () => {
         </ol>
       </nav>
       <section className="banner_image container-fluid">
-        <img src={kids_img} style={{ height: '400px' }} className='kids_img' alt="Online Shop Business LinkedIn Banner" />
+        <img src={kids_img} style={{ height: '400px', width: '100%' }} className='kids_img' alt="Online Shop Business LinkedIn Banner" />
       </section>
       <section>
         <div className="container mt-5">
