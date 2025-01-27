@@ -7,7 +7,7 @@ import { useCart } from "../ContextAPIs/ContextApi";
 const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
 const Base_Url = import.meta.env.VITE_NODE_API_BASE_IMAGE_URL;
 
-const Orderdetail = () => {
+const OrderDetail = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useCart();
@@ -123,4 +123,4 @@ const Orderdetail = () => {
   );
 };
 
-export default Orderdetail;
+export default OrderDetail;

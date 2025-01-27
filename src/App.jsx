@@ -26,7 +26,7 @@ import Profile from './Component/Profile/Profile';
 import EditProfile from './Component/Profile/EditProfile';
 import { CartProvider } from './Component/ContextAPIs/ContextApi';
 import CheckoutForm from './Component/CheckOutForm/CheckoutForm';
-import Orderdetail from './Component/Pages/orderdetail';
+import OrderDetail from './Component/Pages/OrderDetails';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -77,7 +77,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/edit-profile/:userId" element={<EditProfile />} />
             <Route path='/check-out' element = {<CheckoutForm />} />
-            <Route path='/order-detail' element = {<Orderdetail />} /> 
+            <Route path='/order-detail' element = {<OrderDetail />} /> 
           </Routes>
           <Footer />
         </BrowserRouter>
