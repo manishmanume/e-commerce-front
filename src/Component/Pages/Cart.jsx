@@ -6,7 +6,6 @@ import { showErrorAlert } from "../ToastifyMessage/Toastify";
 import '../../assets/CSS/Cart.css';
 import { Link } from "react-router-dom";
 
-const Base_Url = import.meta.env.VITE_NODE_API_BASE_IMAGE_URL;
 const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
 
 const Cart = () => {
@@ -130,7 +129,7 @@ const Cart = () => {
                   <td>
                     <img
                       style={{ height: "60px" }}
-                      src={`${Base_Url}${item.images}`}
+                      src={item.images}
                       alt="Product"
                     />
                   </td>

@@ -5,7 +5,7 @@ import { showErrorAlert } from "../ToastifyMessage/Toastify";
 import { useCart } from "../ContextAPIs/ContextApi";
 
 const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
-const Base_Url = import.meta.env.VITE_NODE_API_BASE_IMAGE_URL;
+
 
 const OrderDetail = () => {
   const [orders, setOrders] = useState([]);
@@ -77,7 +77,7 @@ const OrderDetail = () => {
             <div key={order.orderId} className="row mb-4">
               <div className="col-md-4">
                 <img
-                  src={`${Base_Url}${order.productImage}`}
+                  src={order.productImage}
                   className="img-fluid rounded"
                   alt={order.productName}
                   style={{ objectFit: "cover", height: "200px" }}

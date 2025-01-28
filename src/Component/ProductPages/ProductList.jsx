@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-const Base_Url = import.meta.env.VITE_NODE_API_BASE_IMAGE_URL;
 const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
 
 const ProductList = () => {
@@ -41,7 +40,7 @@ const ProductList = () => {
                   <Link to={`/product/${item.productId}`} className="text-decoration-none">
                   <div className="card product-card">
                     <div className="image-container">
-                      <img src={`${Base_Url}${item.mainImage}`} className="card-img-top" alt={item.name} />
+                      <img src={item.mainImage} className="card-img-top" alt={item.name} />
                     </div>
                     <div className="card-body text-center">
                       <h5 className="card-title">{item.name}</h5>

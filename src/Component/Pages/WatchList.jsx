@@ -5,7 +5,7 @@ import { useCart } from "../ContextAPIs/ContextApi";
 import axios from "axios";
 import { showErrorAlert, showSuccessAlert } from "../ToastifyMessage/Toastify";
 
-const Base_Url = import.meta.env.VITE_NODE_API_BASE_IMAGE_URL;
+
 const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
 
 const WatchList = () => {
@@ -27,7 +27,7 @@ const WatchList = () => {
         setWatchlist(
           response.data.formattedData.map(product => ({
             ...product,
-            currentImage: product.main_image // Initialize currentImage
+            currentImage: product.main_image 
           }))
         );
       } catch (err) {
@@ -113,10 +113,10 @@ const WatchList = () => {
                 <div key={index} className="row align-items-center">
                   <div className="col-md-6 d-flex">
                     <div className="d-flex flex-column gap-2">
-                      {product.additional_images.map((image, idx) => (
+                      {product?.additional_images?.map((image, idx) => (
                         <img
                           key={idx +1}
-                          src={`${Base_Url}${image}`}
+                          src={image}
                           alt={`Additional ${idx + 1}`}
                           className="img-thumbnail"
                           style={{
@@ -131,7 +131,7 @@ const WatchList = () => {
 
                     <div className="text-center flex-grow-1">
                       <img
-                        src={`${Base_Url}${product.currentImage}`}
+                        src={product.main_image}
                         alt={product.name}
                         className="img-fluid rounded mb-2"
                         style={{ maxHeight: "350px" }}

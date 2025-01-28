@@ -7,69 +7,68 @@ import axios from "axios";
 import { useCart } from "../ContextAPIs/ContextApi";
 import { showErrorAlert, showSuccessAlert } from "../ToastifyMessage/Toastify";
 
-const Base_Url = import.meta.env.VITE_NODE_API_BASE_IMAGE_URL;
 const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
 
 const ProductPage = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    
+
     const { addToCart, user } = useCart();
-    
+
     const [quantity, setQuantity] = useState(1);
     const [watchlisted, setWatchlisted] = useState(false);
     const [mainImage, setMainImage] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
-           try {
-              const response = await axios.get(`${Base_Url_API}/products/${id}`);
-              const productData = response?.data;
-              setProduct(productData);
-     
-              if (productData?.images?.length > 0) {
-                 setMainImage(productData.images[0]);
-              }
-           } catch (error) {
-              console.error("Error fetching product data:", error);
-           }
-        };
-     
-        fetchData();
-     }, [id]);
-     
+            try {
+                const response = await axios.get(`${Base_Url_API}/products/${id}`);
+                const productData = response?.data;
+                setProduct(productData);
 
-    
+                if (productData?.images?.length > 0) {
+                    setMainImage(productData.images[0]);
+                }
+            } catch (error) {
+                console.error("Error fetching product data:", error);
+            }
+        };
+
+        fetchData();
+    }, [id]);
+
+
+
 
     const handleQuantityChange = (e) => {
         const value = Math.max(1, parseInt(e.target.value, 10) || 1);
         setQuantity(value);
     };
 
-  
+
     const toggleWatchlist = async () => {
         if (!user || !user.id) {
             showErrorAlert("You need to log in to manage your watchlist.");
             return;
         }
-    
+
         try {
             const response = await axios.post(`${Base_Url_API}/toggle-watchlist`, {
                 userId: user.id,
                 productId: product.id,
-                product_image_id : product.id
+                product_image_id: product.id
             });
-            
+
             const { message } = response.data;
-            setWatchlisted((prev) => !prev); 
+            setWatchlisted((prev) => !prev);
             showSuccessAlert(message);
         } catch (error) {
-            
+
             showErrorAlert("There was an error updating your watchlist.");
         }
     };
-    
-    
+
+
     const handleImageClick = (imageUrl) => {
         setMainImage(imageUrl);
     };
@@ -81,23 +80,23 @@ const ProductPage = () => {
             return;
         }
 
-        const productToAdd = { 
-            userId: user.id, 
-            productId: product.id, 
-            quantity, 
+        const productToAdd = {
+            userId: user.id,
+            productId: product.id,
+            quantity,
             price: product.price
         };
-    
+
         try {
             const response = await axios.post(`${Base_Url_API}/add-to-cart`, productToAdd);
-            
-            addToCart({ ...product, quantity }); 
+
+            addToCart({ ...product, quantity });
             showSuccessAlert('Product added to cart successfully!');
         } catch (error) {
             showErrorAlert('There was an error adding the product to your cart.');
         }
     };
-    
+
     return (
         <div>
             <section className="product_details">
@@ -110,7 +109,7 @@ const ProductPage = () => {
                     <div className="row align-items-center">
                         <div className="col-md-6 text-center">
                             <img
-                                src={`${Base_Url}${mainImage}`}
+                                src={mainImage || product?.mainImage}
                                 alt={product?.name}
                                 style={{ maxHeight: '350px' }}
                                 className="img-fluid rounded mb-2"
@@ -119,7 +118,7 @@ const ProductPage = () => {
                                 {product?.images?.map((image, index) => (
                                     <img
                                         key={index}
-                                        src={`${Base_Url}${image}`}
+                                        src={image}
                                         alt={`Additional ${index + 1}`}
                                         className="img-thumbnail"
                                         style={{
