@@ -25,8 +25,8 @@ const Home = () => {
             >
                 <div className="carousel-inner container-fluid">
                     <div className="carousel-item active">
-                        <img src={carousel3} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-block d-md-block" >
+                        <img src={carousel3} className="d-block w-100" alt="..." style={{ height: '400px'}} />
+                        <div class="carousel-caption d-block d-md-block small_width" >
                             <h6 data-aos='fade-left' data-aos-delay="300">Online Shopping</h6>
                             <h5 data-aos='fade-right' data-aos-delay="300">Launching Soon</h5>
                             <h1 data-aos='fade-left' data-aos-delay="300">Everything You love <br /> in one place</h1>
@@ -35,8 +35,9 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={carousel2} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption carousel_caption me-auto d-block d-md-block" >
+                        <img src={carousel2} className="d-block w-100" alt="..." style={{ height: '400px' }}  />
+                        <div class="carousel-caption carousel_caption me-auto d-block d-md-block small_width"
+                            >
                             <h6 data-aos='fade-left' data-aos-delay="300">Online Shopping</h6>
                             <h5 data-aos='fade-left' data-aos-delay="300">Launching Soon</h5>
                             <h1 data-aos='fade-left' data-aos-delay="300">Everything You love <br /> in one place</h1>
@@ -45,8 +46,8 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={carousel1} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-block d-md-block" >
+                        <img src={carousel1} className="d-block w-100" alt="..." style={{ height: '400px'}} />
+                        <div class="carousel-caption d-block d-md-block small_width" >
                             <h6 data-aos='fade-left' data-aos-delay="300">Online Shopping</h6>
                             <h5 data-aos='fade-left' data-aos-delay="300">Launching Soon</h5>
                             <h1 data-aos='fade-left' data-aos-delay="300">Everything You love <br /> in one place</h1>

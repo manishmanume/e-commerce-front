@@ -15,24 +15,29 @@ const Cart = () => {
 
   if (!cart || cart.length === 0) {
     return (
-      <div className="empty-cart">
-        <img
-          style={{
-            height: '400px', width: '700px', display: 'block',
-            margin: '0 auto',
-          }}
-          src="https://static.vecteezy.com/system/resources/thumbnails/016/462/240/small/empty-shopping-cart-illustration-concept-on-white-background-vector.jpg"
-          alt="Empty Cart"
-        />
-        <div className="container text-center py-4">
-          {user ? (
-            <h2>Your cart is empty!</h2>
-          ) : (
-            <h2>Please create an account to view your cart.</h2>
-          )}
+      <div className="container d-flex flex-column align-items-center">
+        <div className="empty-cart text-center">
+          <img
+            style={{
+              height: 'auto',
+              width: '80%',
+              maxWidth: '500px',
+              marginBottom: '20px',
+              marginLeft: '-40px'
+            }}
+            src="https://static.vecteezy.com/system/resources/thumbnails/016/462/240/small/empty-shopping-cart-illustration-concept-on-white-background-vector.jpg"
+            alt="Empty Cart"
+          />
+          <div className="py-4">
+            {user ? (
+              <h2>Your cart is empty!</h2>
+            ) : (
+              <h2>Please create an account to view your cart.</h2>
+            )}
+          </div>
         </div>
-
       </div>
+
     );
   }
 

@@ -6,7 +6,7 @@ const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
 
 const MenCategory = () => {
   const [products, setProducts] = useState([]);
-  
+
   useEffect(() => {
     axios.get(`${Base_Url_API}/get-menitem`)
       .then(response => {
@@ -25,9 +25,15 @@ const MenCategory = () => {
           <li className="breadcrumb-item active" aria-current="page">Men</li>
         </ol>
       </nav>
-      <section className="banner_image container-fluid ms-5">
-        <img src="https://i.pinimg.com/1200x/d6/d9/65/d6d965b8678cc65a96021c61ac824e3a.jpg" alt="Online Shop Business LinkedIn Banner" />
+      <section className="banner_image container-fluid">
+        <img
+          src="https://i.pinimg.com/1200x/d6/d9/65/d6d965b8678cc65a96021c61ac824e3a.jpg"
+          alt="Online Shop Business LinkedIn Banner"
+          className="img-fluid"
+          style={{ width: "100%", height: "auto" }}
+        />
       </section>
+
       <section>
         <div className="container mt-5">
           <div className="text-center">
@@ -41,7 +47,7 @@ const MenCategory = () => {
                     <Link to={`/product/${product.id}`} className="text-decoration-none">
                       <div className="card product-card">
                         <div className="image-container">
-                        <img src={product.image_url} className="card-img-top" alt={product.name} />
+                          <img src={product.image_url} className="card-img-top" alt={product.name} />
                         </div>
                         <div className="card-body text-center">
                           <h5 className="card-title">{product.name}</h5>
@@ -65,7 +71,7 @@ const MenCategory = () => {
                     <Link to={`/product/${product.productId}`} className="text-decoration-none">
                       <div className="card product-card">
                         <div className="image-container">
-                        <img src={product.image_url} className="card-img-top" alt={product.name} />
+                          <img src={product.image_url} className="card-img-top" alt={product.name} />
                         </div>
                         <div className="card-body text-center">
                           <h5 className="card-title">{product.name}</h5>

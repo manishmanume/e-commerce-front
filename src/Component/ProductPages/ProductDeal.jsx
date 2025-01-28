@@ -13,8 +13,8 @@ const ProductDeal = () => {
 
     return (
         <div>
-            <section className="features">
-                <div className="container mt-5">
+            <section className="features mt-1">
+                <div className="container">
                     <div className="row">
                         <div className="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
                             <div className="py-5">

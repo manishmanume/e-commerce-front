@@ -47,6 +47,10 @@
     .btn {
         margin-bottom: 10px;
     }
+
+    .small_width{
+        margin-top: 30%;
+    }
 }
 
 @media (max-width: 576px) {

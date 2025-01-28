@@ -7,7 +7,6 @@ const Base_Url_API = import.meta.env.VITE_NODE_API_BASE_URL;
 
 const WomenCategory = () => {
   const [products, setProducts] = useState([]);
-console.log(products);
 
   useEffect(() => {
     axios.get(`${Base_Url_API}/get-womenitem`)
