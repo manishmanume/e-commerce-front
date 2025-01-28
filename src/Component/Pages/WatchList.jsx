@@ -27,7 +27,7 @@ const WatchList = () => {
         setWatchlist(
           response.data.formattedData.map(product => ({
             ...product,
-            currentImage: product.main_image 
+            currentImage: product.main_image
           }))
         );
       } catch (err) {
@@ -41,14 +41,13 @@ const WatchList = () => {
   }, [user]);
 
   const handleImageClick = (productIndex, newImage) => {
-    setWatchlist(prevState => {
+    setWatchlist((prevState) => {
       const updatedList = [...prevState];
-      if (updatedList[productIndex].currentImage !== newImage) {
-        updatedList[productIndex].currentImage = newImage;
-      }
+      updatedList[productIndex].currentImage = newImage;
       return updatedList;
     });
   };
+
 
   const handleRemove = async (watch_id) => {
     if (!watch_id) {
@@ -60,8 +59,11 @@ const WatchList = () => {
       const response = await axios.post(`${Base_Url_API}/remove-item-watch`, { watch_id });
 
       if (response?.data?.ResponseCode === 1) {
-        setWatchlist((prevWatchlist) =>
-          prevWatchlist.filter((item) => item.watch_id !== watch_id)
+        setWatchlist(
+          response.data.formattedData.map((product) => ({
+            ...product,
+            currentImage: product.main_image,
+          }))
         );
         showSuccessAlert(response?.data?.ResponseMessage);
       } else {
@@ -115,7 +117,7 @@ const WatchList = () => {
                     <div className="d-flex flex-column gap-2">
                       {product?.additional_images?.map((image, idx) => (
                         <img
-                          key={idx +1}
+                          key={idx}
                           src={image}
                           alt={`Additional ${idx + 1}`}
                           className="img-thumbnail"
@@ -123,6 +125,7 @@ const WatchList = () => {
                             width: "80px",
                             height: "80px",
                             cursor: "pointer",
+                            border: product.currentImage === image ? "2px solid blue" : "none",
                           }}
                           onClick={() => handleImageClick(index, image)}
                         />
@@ -131,7 +134,7 @@ const WatchList = () => {
 
                     <div className="text-center flex-grow-1">
                       <img
-                        src={product.main_image}
+                        src={product.currentImage}
                         alt={product.name}
                         className="img-fluid rounded mb-2"
                         style={{ maxHeight: "350px" }}
@@ -159,6 +162,7 @@ const WatchList = () => {
                     </button>
                   </div>
                 </div>
+
               ))
             )}
           </div>
