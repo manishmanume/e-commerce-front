@@ -20,6 +20,7 @@ const ProductPage = () => {
     const [mainImage, setMainImage] = useState("");
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${Base_Url_API}/products/${id}`);
