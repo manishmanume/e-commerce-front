@@ -43,7 +43,7 @@ const MenCategory = () => {
             <div className="container py-4">
               <div className="row">
                 {products.map((product) => (
-                  <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={product.id}>
+                  <div className="col-lg-3 col-md-4 col-sm-4 col-6 mb-4" key={product.id}>
                     <Link to={`/product/${product.id}`} className="text-decoration-none">
                       <div className="card product-card">
                         <div className="image-container">
@@ -67,7 +67,7 @@ const MenCategory = () => {
             <div className="container py-4">
               <div className="row">
                 {products.map((product) => (
-                  <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={product.productId}>
+                  <div className="col-lg-3 col-md-4 col-sm-4 col-6 mb-4" key={product.productId}>
                     <Link to={`/product/${product.productId}`} className="text-decoration-none">
                       <div className="card product-card">
                         <div className="image-container">

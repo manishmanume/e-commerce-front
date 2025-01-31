@@ -234,10 +234,24 @@ const Navbar = () => {
                                 <li className="nav-item">
                                     <a className="nav-link" href="/contact-us">Contact Us</a>
                                 </li>
-                                <li className='nav-item'>
-                                    <a className="nav-link d-block d-md-none" href="/login-signin">
-                                        Login
-                                    </a>
+                                <li className="nav-item d-block d-md-none">
+                                    {isLoggedIn ? (
+                                        <a
+                                            className="nav-link"
+                                            href="/"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                handleLogout();
+                                                setIsLoggedIn(false);
+                                            }}
+                                        >
+                                            Logout
+                                        </a>
+                                    ) : (
+                                        <a className="nav-link" href="/login-signin">
+                                            Login
+                                        </a>
+                                    )}
                                 </li>
                             </ul>
                         </div>

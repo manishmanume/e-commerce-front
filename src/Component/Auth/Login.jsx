@@ -65,14 +65,15 @@ function Login() {
             });
 
             const result = await response.json();
-
+            console.log(result);
+            
             if(result){
                 showSuccessAlert('Registration successful!');
                 setname('');
                 setUsername('');
                 setEmail('');
                 setPassword('');
-                navigate('/');
+                navigate('/login-signin');
             }
 
         } catch (error) {

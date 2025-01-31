@@ -36,7 +36,7 @@ const ProductList = () => {
           <div className="row">
             {products?.map((item, index) => {
               return (
-                <div key={index} id={item.productId} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div key={index} id={item.productId} className="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
                   <Link to={`/product/${item.productId}`} className="text-decoration-none">
                   <div className="card product-card">
                     <div className="image-container">

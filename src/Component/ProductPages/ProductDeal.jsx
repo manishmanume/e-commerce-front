@@ -19,7 +19,7 @@ const ProductDeal = () => {
                         <div className="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
                             <div className="py-5">
                             <SlCalender style={{fontSize:'40px'}} />
-                                <h4 className="element-title text-capitalize">Book An Appointment</h4>
+                                <h4 className="element-title text-capitalize my-3">Book An Appointment</h4>
                                 <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
                             </div>
                         </div>
